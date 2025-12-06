@@ -7,14 +7,18 @@ let incremento =
 //  condicao ? verdadeira : falsa
 // if (localStorage.getItem('incremento') == null) {
 // }
+
 let j = 1;
-while (j < incremento.valor) {
-  // Recuperar o elemento da lista desordenada
-  let itensUl = document.getElementById('itensUl');
-  // Adicionar o item com o valor do incremento da lista desordenada.
-  itensUl.insertAdjacentHTML('beforeend', `<li>${j}</li>`);
-  j++;
-}
+
+window.onload = (event) => { //alteração: mover a açao inicial da lista para onload
+  while (j < incremento.valor) {
+    // Recuperar o elemento da lista desordenada
+    let itensUl = document.getElementById('itensUl');
+    // Adicionar o item com o valor do incremento da lista desordenada.
+    itensUl.insertAdjacentHTML('beforeend', `<li>${j}</li>`);
+    j++;
+  }
+};
 
 // Evento de click do botão incrementar.
 incrementarButton.onclick = (event) => {
